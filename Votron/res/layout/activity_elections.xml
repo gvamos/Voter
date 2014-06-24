@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"  
+  android:orientation="vertical"  
+  android:layout_width="fill_parent"  
+  android:layout_height="fill_parent">  
+    
+
+    
+    <TextView
+      android:id="@+id/textViewElections"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Elections"
+      android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Spinner
+        android:id="@+id/electionSpinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+    
+    <TextView
+      android:id="@+id/textViewVoter"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="Voter"
+      android:textAppearance="?android:attr/textAppearanceMedium" />
+        
+     <Spinner
+        android:id="@+id/voterSpinner"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" />
+
+     <Button
+         android:id="@+id/btn_edit_ballot"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:text="Edit Ballot" />
+      
+</LinearLayout> 
