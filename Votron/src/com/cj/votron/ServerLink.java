@@ -103,8 +103,8 @@ public class ServerLink {
             activity.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                	DebugActivity da = (DebugActivity)activity;
-                	da.display(result);
+                	ElectionsActivity ea = (ElectionsActivity)activity;
+                	ea.display(result);
                     //mTextViewStrength.append(" " + getString(R.string.disconnected));
                 }
             });

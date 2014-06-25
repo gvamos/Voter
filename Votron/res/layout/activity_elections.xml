@@ -3,6 +3,30 @@
   android:orientation="vertical"  
   android:layout_width="fill_parent"  
   android:layout_height="fill_parent">  
+  
+     <Button
+         android:id="@+id/btn_synch"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:onClick="syncPressed"
+         android:text="Synch" />
+     
+          <Button
+         android:id="@+id/btn_checkStat"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:onClick="checkStatPressed"
+         android:text="Check Stat" />
+     
+
+          
+               <Button
+         android:id="@+id/btn_test3"
+         android:layout_width="fill_parent"
+         android:layout_height="wrap_content"
+         android:text="Test3" />
+     
+     
     
 
     
