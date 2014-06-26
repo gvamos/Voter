@@ -43,11 +43,19 @@ public class ServerLink {
 		String query;
 		Activity activity;
 		String label;
+		DTOBase dto;
 		
 		public Fetch(String query, Activity activity, String label){
 			this.query = query;
 			this.activity = activity;
 			this.label = label;
+		}
+		
+		public Fetch(String query, Activity activity, DTOBase dto){
+			this.query = query;
+			this.activity = activity;
+			this.label = query; // TODO Redundant.  Fix this.
+			this.dto = dto;
 		}
 
 		/* (non-Javadoc)
@@ -146,6 +154,13 @@ public class ServerLink {
 		return;
 	}
 	
+	void getUpdate(DTOBase dto, Activity activity) {
+		String query = dto.getQuery();
+		Fetch fetch = new Fetch(Config.SERVER + "/" + query, activity, "elections");
+		asyncAction(activity,fetch);
+		return;
+	}
+	
 	
 	/**************************************************
 	 * 
@@ -233,7 +248,7 @@ public class ServerLink {
 	
 	String voterList(String rawJsonStr){
 		
-		String cleanJson = "WTF?";
+		String cleanJson = "No voter list?";
 		StringBuilder sb = new StringBuilder();
 		try {
 			JSONArray arr = new JSONArray(rawJsonStr);
@@ -248,13 +263,15 @@ public class ServerLink {
 		} catch (JSONException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}		
-		return sb.toString();
+		}
+		cleanJson = sb.toString();
+		return cleanJson;
 	}
 	
 	String electionList(String rawJsonStr){
 		
-		String cleanJson = "WTF?";
+		String cleanJson = "No election list?";
+		StringBuilder sb = new StringBuilder();
 		try {
 			JSONArray arr = new JSONArray(rawJsonStr);
 			for (int i = 0; i < arr.length(); i++) {
@@ -267,6 +284,7 @@ public class ServerLink {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}		
+		cleanJson = sb.toString();
 		return cleanJson;
 	}
 	

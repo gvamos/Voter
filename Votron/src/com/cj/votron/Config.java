@@ -12,6 +12,7 @@ class Config {
 	public static final String SERVER = "http://votecastomatic.com";
 	public static final String VOTERS = "voters";
 	public static final String ELECTIONS = "elections";
+	public static final String BALLOT = "ballot";
 	
 //	Elections: http://votecastomatic.com/elections
 //  Voters: http://votecastomatic.com/voters

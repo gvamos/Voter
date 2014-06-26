@@ -62,6 +62,7 @@ public class ElectionsActivity extends Activity {
 		String msg = "Sync pressed";
 		System.out.println(msg);
 		ServerLink.getInstance().getElectionQuery(Config.VOTERS, this);
+		ServerLink.getInstance().getElectionQuery(Config.ELECTIONS, this);
 		Toast.makeText(ElectionsActivity.this,msg,Toast.LENGTH_SHORT).show();         
 	}
 	
