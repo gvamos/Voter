@@ -15,13 +15,9 @@ abstract public class DTOBase {
 	public List<String> getMembers(){ return members; }
 
 	
-	// TODO: XXX
-//	void getUpdate(Activity activity) {
-//		String query = getQuery();
-//		Fetch fetch = new Fetch(Config.SERVER + "/" + query, activity, "elections");
-//		ServerLink.getInstance().asyncAction(activity,fetch);
-//		return;
-//	}
+	void getUpdate(Activity activity) {
+		ServerLink.getInstance().execFetch(activity, this);
+	}
 	
 	abstract void load(String rawData);
 	

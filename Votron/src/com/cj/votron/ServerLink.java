@@ -179,6 +179,7 @@ public class ServerLink {
 		return;
 	}
 	
+	//TODO make this private
 	void asyncAction(final Activity activity, final Fetch fetch) {
 		new AsyncTask<Context, Void, Void>() {
 			@Override
@@ -193,6 +194,17 @@ public class ServerLink {
 			}
 		}.execute();
 	}
+	
+	
+	//TODO: Integrate this with parser (dto.load())
+    void execFetch(final Activity activity, DTOBase dto){
+		String query = dto.getQuery();
+		Fetch fetch = new Fetch(Config.SERVER + "/" + query, activity, "elections");
+		ServerLink.getInstance().asyncAction(activity,fetch);
+		return;    	
+    }
+	
+	
 	
 	String getASCIIContentFromEntity(HttpEntity entity)
 			throws IllegalStateException, IOException {
